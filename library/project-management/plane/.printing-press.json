@@ -45,6 +45,41 @@
       "name": "Module Membership & Sync Enrichment",
       "command": "module",
       "description": "Manage an issue's module membership (of/create-issue/sync) and auto-enrich issue module_ids during sync (on by default), since Plane's issue API never returns module membership."
+    },
+    {
+      "name": "Cycle Plan",
+      "command": "workflow cycle-plan",
+      "description": "Preview and atomically add an explicitly validated selection of work items to a cycle, with live selection and readback and automatic selection that excludes every item already assigned to any cycle."
+    },
+    {
+      "name": "Cycle Health",
+      "command": "workflow cycle-health",
+      "description": "Read live cycle, work-item, state, and blocker data to report bounded cycle health without mutating Plane."
+    },
+    {
+      "name": "Cycle Rollover",
+      "command": "workflow cycle-rollover",
+      "description": "Preview unfinished work from a source cycle, transfer it atomically to a target cycle, and verify the result from live source and target readback."
+    },
+    {
+      "name": "Backlog Triage",
+      "command": "workflow backlog-triage",
+      "description": "Read and rank a bounded live backlog for planning while keeping triage strictly read-only and separate from mutation."
+    },
+    {
+      "name": "Backlog Apply",
+      "command": "workflow backlog-apply",
+      "description": "Preview explicit backlog updates, apply them only with mutation confirmation, and normalize live server representations before verifying the requested changes."
+    },
+    {
+      "name": "Project Health",
+      "command": "workflow project-health",
+      "description": "Read bounded live project, cycle, work-item, and state data to summarize delivery health without mutating Plane."
+    },
+    {
+      "name": "Blockers",
+      "command": "workflow blockers",
+      "description": "Inspect a bounded live relation fan-out and report blocking work-item relationships without mutating Plane."
     }
   ]
 }
