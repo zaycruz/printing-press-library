@@ -151,6 +151,26 @@ Create and manage work items like tasks, bugs, features, and user stories. The c
 - `plane-pp-cli work-items get-workspace-2` — Retrieve a specific work item using workspace slug, project identifier, and issue identifier.
 - `plane-pp-cli work-items search-2` — Perform semantic search across issue names, sequence IDs, and project identifiers.
 
+**agent-native workflows** — **Cycle, Backlog, and Project Operations**
+
+Operate Plane planning workflows with live API evidence, bounded relation fan-out, and explicit separation between analysis and mutation. Read-only health, triage, and blocker commands never mutate Plane; cycle and backlog mutators support `--dry-run` previews and verify applied changes with live readback.
+
+*Key Features:*
+- Plan and roll over cycles with preflight validation, atomic endpoints, and live post-mutation verification
+- Exclude every already-cycled work item from automatic cycle selection
+- Keep backlog triage read-only and apply reviewed changes through a separate command
+- Bound relation fan-out with `--limit` and normalize server representations before mutation verification
+
+*Use Cases:* Cycle planning, delivery-health review, backlog grooming, rollover preparation, and blocker analysis.
+
+- `plane-pp-cli workflow cycle-plan` — Preview or atomically add a validated explicit or automatically selected set of work items to a cycle.
+- `plane-pp-cli workflow cycle-health` — Report bounded live cycle health without changing Plane.
+- `plane-pp-cli workflow cycle-rollover` — Preview unfinished work with `--dry-run`, atomically transfer it to a target cycle, and verify both cycles from live readback.
+- `plane-pp-cli workflow backlog-triage` — Rank a bounded live backlog for review without applying changes.
+- `plane-pp-cli workflow backlog-apply` — Preview reviewed backlog changes with `--dry-run`, apply them explicitly, and verify normalized live state.
+- `plane-pp-cli workflow project-health` — Summarize bounded live delivery health across a project.
+- `plane-pp-cli workflow blockers` — Inspect bounded live blocking relations without mutating Plane.
+
 
 ### Finding the right command
 
